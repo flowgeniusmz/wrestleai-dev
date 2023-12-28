@@ -51,6 +51,7 @@ def parse_wrestling_data(html_content, weight_class):
     
     return records
 
+@st.cache_data
 def GetRankings():
     
     data = fetch_wrestling_data(weight_classes)
