@@ -14,11 +14,8 @@ import requests
 from streamlit_webrtc import webrtc_streamer, RTCConfiguration
 import av
 import urllib.request
-
-
-import streamlit as st
-import cv2
-import tempfile
+from streamlit_webrtc import webrtc_streamer, RTCConfiguration, VideoProcessorBase
+import threading
 
 haar_url = "https://github.com/opencv/opencv/blob/master/data/haarcascades/haarcascade_frontalface_default.xml?raw=true"
 haar_file = "haarcascade_frontalface_default.xml"
@@ -72,11 +69,7 @@ for video_file in video_files:
     video.release()
 '---'
 st.subheader('Live Video Analysis')
-from streamlit_webrtc import webrtc_streamer, RTCConfiguration, VideoProcessorBase
-import av
-import cv2
-import streamlit as st
-import threading
+
 
 class VideoProcessor(VideoProcessorBase):
     def __init__(self) -> None:
