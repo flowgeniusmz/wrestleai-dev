@@ -63,4 +63,4 @@ def GetRankings():
     
     return df
 
-st.data_editor(GetRankings())
+st.data_editor(GetRankings(), use_container_width=True)
