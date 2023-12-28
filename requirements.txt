@@ -40,3 +40,4 @@ extra_streamlit_components
 ipython
 langchain
 opencv-python-headless
+opencv-contrib-python-headless
