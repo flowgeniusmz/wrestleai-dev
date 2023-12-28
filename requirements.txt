@@ -37,3 +37,6 @@ hydralit_components
 streamlit_elements
 streamlit_extras
 extra_streamlit_components
+ipython
+langchain
+opencv-python-headless
