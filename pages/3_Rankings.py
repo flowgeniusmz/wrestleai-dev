@@ -5,6 +5,8 @@ import requests
 import pandas as pd
 
 client = OpenAI(api_key=st.secrets.openai.api_key)
+weight_classes = st.session_state.weightclasses
+all_records = st.session_state.rankingsallrecords
 
 def fetch_wrestling_data(weight_classes):
     base_url = st.secrets.wrestlestat.base_url_weight
@@ -49,14 +51,16 @@ def parse_wrestling_data(html_content, weight_class):
     
     return records
 
-def main():
-    weight_classes = [125, 133, 141, 149, 157, 165, 174, 184, 197, 285]
-    all_records = []
-
+def GetRankings():
+    
     data = fetch_wrestling_data(weight_classes)
+
     for weight, html_content in data.items():
         records = parse_wrestling_data(html_content, weight)
         all_records.extend(records)
 
     df = pd.DataFrame(all_records)
-    print(df)
+    
+    return df
+
+st.data_editor(GetRankings())

@@ -6,16 +6,6 @@ from tempfile import NamedTemporaryFile
 import time
 from config import pagesetup as ps
 
-# SESSION STATE
-if "vidtempfile" not in st.session_state:
-    st.session_state.vidtempfile = None
-if "vidtempfilepath" not in st.session_state:
-    st.session_state.vidtempfilepath = ""
-if "vidtotalframes" not in st.session_state:
-    st.session_state.vidtotalframes = 0
-if "vidcurrentframe" not in st.session_state:
-    st.session_state.vidcurrentframe = 0
-
 # Page Header
 ps.set_title("WrestleAI", "Match Video Analysis")
 

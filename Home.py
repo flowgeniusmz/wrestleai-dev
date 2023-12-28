@@ -8,6 +8,20 @@ import os
 from functions import image_analyze as imanalyze, image_encode as imencode, image_frame_description as imframedesc
 
 
+# SESSION STATE
+if "vidtempfile" not in st.session_state:
+    st.session_state.vidtempfile = None
+if "vidtempfilepath" not in st.session_state:
+    st.session_state.vidtempfilepath = ""
+if "vidtotalframes" not in st.session_state:
+    st.session_state.vidtotalframes = 0
+if "vidcurrentframe" not in st.session_state:
+    st.session_state.vidcurrentframe = 0
+if "weightclasses" not in st.session_state:
+    st.session_state.weightclasses = [125, 133, 141, 149, 157, 165, 174, 184, 197, 285]
+if "rankingsallrecords" not in st.session_state:
+    st.session_state.rankingsallrecords = []
+    
 #0. Page Config
 st.set_page_config("WrestleAI", initial_sidebar_state="collapsed", layout="wide")
 
